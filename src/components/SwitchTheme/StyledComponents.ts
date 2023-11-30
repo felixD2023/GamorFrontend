@@ -2,8 +2,8 @@
 import { styled } from "styled-components";
 
 export const SwitchContainer = styled.div`
-  width:40px;
-  height: 20px;
+  width:46px;
+  height: 23px;
   background-color: ${({ theme }) => theme.selected};
   display:flex-box;
   border-radius: 2em;
@@ -15,12 +15,15 @@ export const SwitchContainer = styled.div`
 `;
 
 export const SwitchBall = styled.div<{position:boolean}>`
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
   background-color: ${({ theme }) => theme.background1};
 	border-radius: 50%;
 	position:absolute;
-	top:2.5px;
-	left:${({position})=>!position?"2.5px":"22.5px"};
-  transition:0.4s all ease-in;
+	top:3px;
+	left:${({position})=>!position?"2.5px":"26px"};
+  transition:0.2s all ease-in;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 `;
