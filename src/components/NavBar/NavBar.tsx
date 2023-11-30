@@ -1,4 +1,4 @@
-import ButtonTheme from "../ButtonTheme/ButtonTheme";
+import SwitchTheme from "../SwitchTheme/SwitchTheme";
 import Button from "../button/Button";
 import NavBarLink from "./NavBarLink";
 import { Logo, NavBarStyled } from "./StyledComponents";
@@ -20,7 +20,7 @@ const NavBar = () => {
         <Logo>Gamor</Logo>
 
         <div style={{ display: "flex", alignItems:"center" }}>
-          <ButtonTheme/>
+          <SwitchTheme/>
           <Button text="Sing in" variant="text" onClick={() => singIn()} />
           <Button text="Create account" variant="rounded" onClick={() => singIn()} />
         </div>
