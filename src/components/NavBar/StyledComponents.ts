@@ -12,6 +12,8 @@ export const LinkActive = styled.div`
   position: relative;
   color: ${({ theme }) => theme.selected};
   font-size: small;
+  transition: 0.4s color ease-in;
+
 `;
 export const LinkActiveDecorator = styled.div`
   border: 1px solid #000;
@@ -24,6 +26,7 @@ export const LinkActiveDecorator = styled.div`
   transform: rotate(165deg);
   right: -9px;
   top: -5px;
+  transition: 0.4s border-color ease-in;
 `;
 
 export const BlankSpaceLinkActiveDecorator = styled.div`
@@ -33,6 +36,7 @@ export const BlankSpaceLinkActiveDecorator = styled.div`
   background-color: ${({theme})=>theme.background1};
   top: -8px;
   left: -2px;
+  transition: 0.4s background-color ease-in;
 `;
 
 export const NavBarStyled = styled.nav`
@@ -46,4 +50,6 @@ export const Logo = styled.div`
   color:${({theme})=>theme.text};
   font-size: large;
   font-weight: 600;
+  transition: 0.4s color ease-in;
+
 `

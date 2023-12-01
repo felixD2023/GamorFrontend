@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Home from "./pages/Home.tsx";
-import Login from "./pages/Login.tsx";
+import HomePage from "./pages/HomePage/HomePage.tsx";
+import LoginPage from "./pages/LoginPage/Login.tsx";
 import App from "./App.tsx";
 
 //react-router-dom
@@ -19,24 +19,24 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "home/",
-        element: <Home />,
+        path: "/",
+        element: <HomePage />,
       },
       {
         path: "login/",
-        element: <Login />,
+        element: <LoginPage />,
       },
       {
         path: "party/",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "premium/",
-        element: <Home />,
+        element: <HomePage />,
       },
       {
         path: "stream/",
-        element: <Home />,
+        element: <HomePage />,
       },
     ],
   },

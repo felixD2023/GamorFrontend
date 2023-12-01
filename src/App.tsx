@@ -16,6 +16,8 @@ const AppStyled = styled.div`
   background-color: ${({ theme }) => theme.background1};
   width: 100%;
   height: 100vh;
+  transition:0.4s all ease-in;
+  transition-property: background-color, color, left;
 `;
 
 const App = () => {
