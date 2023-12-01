@@ -1,12 +1,14 @@
 
 import MainSection from "./components/MainSection/MainSection"
-import LeftPanel from "./components/LeftSection/LeftSection"
+import LeftSection from "./components/LeftSection/LeftSection"
+import CentralSection from "./components/CentralSection/CentralSection"
 
 const HomePage = () => {
   return (
     <>
       <MainSection >
-        <LeftPanel></LeftPanel>
+        <LeftSection/>
+        <CentralSection/>
       </MainSection>
     </>
   )

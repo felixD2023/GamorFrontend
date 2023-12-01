@@ -45,7 +45,7 @@ export const BigText = styled.div<{ highlighted?: boolean }>`
 
 export const SmallText = styled.span<{ highlighted?: boolean }>`
   color: ${(props) =>
-    props.highlighted ? ({ theme }) => theme.text : ({ theme }) => "gray"};
+    props.highlighted ? ({ theme }) => theme.text : "gray"};
   height: 30px;
   font-size: 13px;
   position: relative;
