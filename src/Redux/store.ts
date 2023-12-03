@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from './themeSlice'
-import usersJoinedReducer from './usersjoinedSlice'
-
+import usersJoinedReducer from './usersJoinedSlice'
+import platformsReducer from './platformsSlice'
 
 
 export const store = configureStore({
     reducer: {
         theme: themeReducer,
         usersJoined:usersJoinedReducer,
+        platforms:platformsReducer,
     },
 })
 

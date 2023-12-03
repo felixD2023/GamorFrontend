@@ -18,6 +18,7 @@ const AppStyled = styled.div`
   height: 100vh;
   transition:0.4s all ease-in;
   transition-property: background-color, color, left;
+  user-select:none;
 `;
 
 const App = () => {
