@@ -30,9 +30,9 @@ export const platformsState = createSlice({
       const tempPlatforms: PlatformType[] = [];
       state.platforms.map((platform: PlatformType) => {
         if (platform.name === action.payload) {
-          tempPlatforms.push({ name: platform.name, isActive: true, icon:platform.icon });
+          tempPlatforms.push({ ...platform, isActive: true});
         } else {
-          tempPlatforms.push({ name: platform.name, isActive: false, icon:platform.icon });
+          tempPlatforms.push({ ...platform, isActive: false});
         }
       });
       state.platforms = tempPlatforms;

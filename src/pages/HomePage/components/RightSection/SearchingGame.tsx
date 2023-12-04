@@ -12,7 +12,7 @@ import ScrollableList from "../../../../components/ScrollableList/ScrollableList
 import Game from "./Game";
 import Gamer from "./Gamer";
 
-//theme
+//colors
 import { colorList } from "../../../../themes/Theme";
 
 //icon
@@ -37,10 +37,10 @@ const SearchingGame = () => {
   const [openFilter, setOpenFilter] = useState(false);
 
   const list: React.ReactNode[] = [
-    <Game name="COD Warzone" />,
-    <Game name="COD Warzone" />,
-    <Game name="COD Warzone" />,
-    <Game name="COD Warzone" />,
+    <Game key="COD Warzone" name="COD Warzone" />,
+    <Game key="COD Warzone1" name="COD Warzone1" />,
+    <Game key="COD Warzone2" name="COD Warzone2" />,
+    <Game key="COD Warzone3" name="COD Warzone3" />,
   ];
 
   const listGamers: React.ReactNode[] = [

@@ -26,10 +26,10 @@ const Gamer = (props: GamerProps) => {
           </TittleStyled>
         </div>
         <AvatarOfGamerContainer>
-          <AvatarOfGamer left="15px" backgroundColor={props.backgroundColor[0]}>
+          <AvatarOfGamer left="15px" background_color={props.backgroundColor[0]}>
             <img height={"15px"} src={props.images[0]} />
           </AvatarOfGamer>
-          <AvatarOfGamer left="0px"backgroundColor={props.backgroundColor[1]}>
+          <AvatarOfGamer left="0px" background_color={props.backgroundColor[1]}>
             <img height={"17px"} src={props.images[1]} />
           </AvatarOfGamer>
         </AvatarOfGamerContainer>

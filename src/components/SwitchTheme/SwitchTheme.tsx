@@ -19,7 +19,7 @@ const ButtonTheme = () => {
 
   return (
     <SwitchContainer onClick={() => handleChangeTheme()}>
-      <SwitchBall position={position}>
+      <SwitchBall position_x={position}>
         {!position ? (
           <div
             className="pi pi-moon"

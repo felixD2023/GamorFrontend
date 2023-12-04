@@ -223,14 +223,14 @@ export const AvatarOfGamerContainer = styled.div`
 `;
 
 export const AvatarOfGamer = styled.div<{
-  backgroundColor: string;
+  background_color: string;
   left: string;
 }>`
   position: absolute;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${(props) => props.background_color};
   left: ${(props) => props.left};
   display: flex;
   justify-content: center;
