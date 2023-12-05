@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import {
   GameContainer,
   Divider,
@@ -83,10 +83,14 @@ const SearchingGame = () => {
   const [openFilter, setOpenFilter] = useState(false);
   const [year, setYear] = useState("");
   const [numberOfPlayers, setNumberOfPlayers] = useState(20);
-  const [gameMessage, setGameMessage]=useState("Search a game!")
+  const [gameMessage, setGameMessage] = useState("Search a game!");
   const games = useSelector((state: RootState) => state.games.gamesSelected);
-  const categories = useSelector((state: RootState) => state.categories.categories);
-  const platforms = useSelector((state: RootState) => state.platforms.platforms);
+  const categories = useSelector(
+    (state: RootState) => state.categories.categories
+  );
+  const platforms = useSelector(
+    (state: RootState) => state.platforms.platforms
+  );
   const dispatch = useDispatch();
 
   const searchNow = () => {
@@ -105,17 +109,26 @@ const SearchingGame = () => {
     };
 
     dispatch(searchGames(filter));
-    setGameMessage("Not Found!")
-    setOpenFilter(false)
+    setGameMessage("Not Found!");
+    setOpenFilter(false);
   };
 
   return (
     <SearchingGameContainer>
       <GameContainer>
-        {games.length>0?<ScrollableList list={games} itemsType="games" height="50px" width="100%" />
-        :<TittleStyled style={{marginLeft:"30px"}}><strong>{gameMessage}</strong></TittleStyled>
-        }
-        
+        {games.length > 0 ? (
+          <ScrollableList
+            list={games}
+            itemsType="games"
+            height="50px"
+            width="100%"
+          />
+        ) : (
+          <TittleStyled style={{ marginLeft: "30px" }}>
+            <strong>{gameMessage}</strong>
+          </TittleStyled>
+        )}
+
         <SlideIcon
           onClick={() => setOpenFilter(!openFilter)}
           className="pi pi-sliders-h"

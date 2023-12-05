@@ -14,9 +14,9 @@ const CentralSection = () => {
 	
 	return (
     <CentralSectionStyled>
-      <UserAvatar user={usersJoinedList[0]}  top="94px" left="89px" />
-      <UserAvatar user={usersJoinedList[1]} top="150px" left="20px" />
-      <UserAvatar user={usersJoinedList[2]} emoji top="170px" left="250px" />
+      <UserAvatar top="94px" left="89px" />
+      {usersJoinedList.map((user, index)=>(<UserAvatar user={user} emoji={index%2===0} top={user.positionTop } left={user.positionLeft} />))}
+      
       <Header />
       <Timer>
         <strong>11 : 45</strong>

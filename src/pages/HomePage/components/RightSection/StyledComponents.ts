@@ -268,6 +268,7 @@ export const AvatarOfGamerContainer = styled.div`
 export const AvatarOfGamer = styled.div<{
   background_color: string;
   left: string;
+  
 }>`
   position: absolute;
   width: 20px;

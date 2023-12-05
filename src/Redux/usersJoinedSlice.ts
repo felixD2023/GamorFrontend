@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-//images
-import AvatarUserJoined1 from "../Images/actor.png";
 
 export interface UserJoinedType {
   image?: string;
+  positionTop:string;
+  positionLeft:string
 }
 
 export interface UsersJoinedList {
@@ -12,21 +12,19 @@ export interface UsersJoinedList {
 }
 
 const initialState: UsersJoinedList = {
-  users: [{}, { image: AvatarUserJoined1 }, { image: AvatarUserJoined1 }],
+  users: [],
 };
 
 export const usersJoinedSlice = createSlice({
   name: "usersJoined",
   initialState,
   reducers: {
-    setUserJoined: (state, action: PayloadAction<UserJoinedType>) => {
-      if (!state.users[0].image) {
-        state.users[0] = action.payload;
-      }
+    addUserJoined: (state, action: PayloadAction<string>) => {
+      state.users.push({image:action.payload,positionTop: `${Math.floor(Math.random()*400)+30}px` ,positionLeft:`${Math.floor(Math.random()*240)+30}px`})
     },
   },
 });
 
-export const {setUserJoined} = usersJoinedSlice.actions;
+export const {addUserJoined} = usersJoinedSlice.actions;
 
 export default usersJoinedSlice.reducer

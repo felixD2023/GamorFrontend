@@ -18,7 +18,7 @@ const ScrollableList = (props: ScrollableListProps) => {
   return (
     <ScrollableListContainer width={props.width} height={props.height}>
       <ScrollableListStyled>
-        {props.itemsType==="games"?
+        {(props.itemsType==="games")?
         props.list.map((game:GameType)=>(<Game key={game.name} name={game.name} />))
         :props.list}
         

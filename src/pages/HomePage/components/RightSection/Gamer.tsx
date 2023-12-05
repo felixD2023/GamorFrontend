@@ -8,6 +8,10 @@ import {
   TittleStyled,
 } from "./StyledComponents";
 
+//redux
+import { useDispatch } from "react-redux";
+import { addUserJoined } from "../../../../Redux/usersJoinedSlice";
+
 interface GamerProps {
   number: number;
   name: string;
@@ -16,6 +20,7 @@ interface GamerProps {
 }
 
 const Gamer = (props: GamerProps) => {
+  const dispatch = useDispatch()
   return (
     <GamerStyled>
       <GamerInfo>
@@ -34,7 +39,7 @@ const Gamer = (props: GamerProps) => {
           </AvatarOfGamer>
         </AvatarOfGamerContainer>
       </GamerInfo>
-      <AddButton>+</AddButton>
+      <AddButton onClick={()=>dispatch(addUserJoined(props.images[1]))}>+</AddButton>
     </GamerStyled>
   );
 };

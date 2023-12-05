@@ -1,17 +1,16 @@
 import { EmojiUserJoined, UserJoined, UserUnjoined } from "./StyledComponents";
 
-import ImageUserJoined1 from "../../../../Images/actor.png";
 
 //icons
 import "primeicons/primeicons.css";
 
 //redux
-import { UserJoinedType } from "../../../../Redux/usersjoinedSlice";
+import { UserJoinedType } from "../../../../Redux/usersJoinedSlice";
 
 
 interface UserAvatarProps {
   emoji?: boolean;
-  user: UserJoinedType;
+  user?: UserJoinedType;
   top: string;
   left: string;
 }
@@ -26,17 +25,17 @@ const UserAvatar = (props: UserAvatarProps) => {
         zIndex: 3,
       }}
     >
-      {props.user.image && (
+      {props.user && (
         <UserJoined>
           {props.emoji && (
             <EmojiUserJoined>
               <div className="pi pi-heart-fill" style={{ color: "white" }} />
             </EmojiUserJoined>
           )}
-          <img style={{ height: "50px" }} src={ImageUserJoined1} />
+          <img style={{ height: "40px" }} src={props.user.image} />
         </UserJoined>
       )}
-      {!props.user.image && (
+      {!props.user && (
         <UserUnjoined>
           <div className="pi pi-user-plus" style={{ color: "white" }} />
         </UserUnjoined>
