@@ -34,10 +34,10 @@ const gamesSlice = createSlice({
 
       state.gamesList.map((game) => {
         if (
-          game.category === action.payload.category &&
+          (game.category === action.payload.category || game.category==="All Categories") &&
           game.platform === action.payload.platform &&
           game.numbersPlayers === action.payload.numbersPlayers &&
-          game.yearCreation === action.payload.yearCreation
+          (game.yearCreation === action.payload.yearCreation || game.yearCreation===0)
         ) {
           tempGamesSelected.push(game);
         }
