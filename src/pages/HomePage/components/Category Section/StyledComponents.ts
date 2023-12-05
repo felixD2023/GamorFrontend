@@ -36,7 +36,7 @@ export const CategoryContainerStyled = styled.div<{ active?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor:pointer;
+  cursor: pointer;
 `;
 
 export const CategoryName = styled.div`
@@ -69,23 +69,23 @@ export const Decorator = styled.div<{ color: string }>`
   transform: rotate(10deg);
 `;
 
-export const ImageBackground = styled.div<{ image: string, active:boolean }>`
+export const ImageBackground = styled.div<{ image: string; active: boolean }>`
   position: absolute;
-	z-index:1;
+  z-index: 1;
   width: calc(970px / 4);
   height: calc(230px / 2);
-	border-radius:8px;
+  border-radius: 8px;
   background-image: url(${(props) => props.image});
-	background-size: cover;
-	opacity:${(props)=>props.active?"1":"0"};
-	transition: 0.4s opacity ease-in;
+  background-size: cover;
+  opacity: ${(props) => (props.active ? "1" : "0")};
+  transition: 0.4s opacity ease-in;
 `;
 
 export const ColoredBackground = styled.div`
-width:100%;
-height:100%;
-border-radius:8px;
-background-color: ${({theme})=>theme.highlight};
-opacity:0.5;
-`
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.highlight};
+  opacity: 0.5;
+`;
 /*(theme.text==="rgb(255, 255, 255)")?"rgb(121, 31, 235)":"rgb(225, 110, 49)"*/

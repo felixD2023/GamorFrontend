@@ -101,6 +101,68 @@ export const PlatformEmojiContainer = styled.div<{ active: boolean }>`
   left: ${(props) => (props.active ? "5px" : "-16px")};
   transition: 0.4s left ease-in;
 `;
+//filter************************************************************
+
+export const FilterContainer = styled.div<{ open: boolean }>`
+  transform: scale(${(props) => (props.open ? "1" : "0")});
+  position: absolute;
+  left: -20px;
+  z-index: 2;
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: ${({ theme }) =>
+    theme.text === "rgb(255, 255, 255)"
+      ? "rgb(0, 0, 0,0.6)"
+      : "rgb(255, 255, 255,0.8)"};
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s transform ease-in, 0.4s background-color ease-in;
+`;
+
+export const YearContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+`;
+
+export const YearInput = styled.input`
+  width: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) =>
+    theme.text === "rgb(255, 255, 255)"
+      ? "rgb(0, 0, 0,0.6)"
+      : "rgb(255, 255, 255,0.8)"};
+  outline: none;
+  color:${({theme})=>theme.text};
+  transition: 0.4s border-color ease-in, 0.4s background-color ease-in, 0.4s color ease-in; 
+`;
+
+export const NumberOfPlayersSelectorContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const SignalSelector = styled.div<{ number: number }>`
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background-color: ${({ theme }) => theme.selected};
+  border-radius: 2em;
+  left: ${(props) => (props.number === 20 ? "40px" : "130px")};
+  top: 15px;
+  transition: 0.3s left ease-in;
+`;
 
 //Searching Game*****************************************************
 
@@ -149,25 +211,6 @@ export const SlideIcon = styled.div`
   transition: 0.4s background-color ease-in;
 `;
 
-export const FilterContainer = styled.div<{ open: boolean }>`
-  transform: scale(${(props) => (props.open ? "1" : "0")});
-  position: absolute;
-  left: -20px;
-  z-index:2;
-  width: 200px;
-  height: 100px;
-  border-radius: 10px;
-  background-color: ${({ theme }) =>
-    theme.text === "rgb(255, 255, 255)"
-      ? "rgb(51, 57, 63,0.8)"
-      : "rgb(255, 255, 255,0.8)"};
-  backdrop-filter: blur(3px);
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 0.2s transform ease-in, 0.4s background-color ease-in;
-`;
 
 export const GamersContainer = styled.div`
   position: relative;
