@@ -1,16 +1,27 @@
 import SwitchTheme from "../SwitchTheme/SwitchTheme";
 import Button from "../button/Button";
 import NavBarLink from "./NavBarLink";
-import { Logo, NavBarStyled } from "./StyledComponents";
+import { LoggedUserContainer, Logo, NavBarStyled } from "./StyledComponents";
 import { useNavigate } from "react-router-dom";
 
-
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../Redux/store";
+import { logout } from "../../Redux/loggedUserSlice";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const loggedUser = useSelector(
+    (state: RootState) => state.loggedUser.loggedUser
+  );
+  const dispatch = useDispatch();
 
   const singIn = () => {
-    navigate("/login")
+    navigate("/login");
+  };
+
+  const Logout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -24,10 +35,21 @@ const NavBar = () => {
         </div>
         <Logo>Gamor</Logo>
 
-        <div style={{ display: "flex", alignItems:"center" }}>
-          <SwitchTheme/>
-          <Button text="Sing in" variant="text"  onClick={() => singIn()} />
-          <Button text="Create account" variant="rounded" color="black"  />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <SwitchTheme />
+          {loggedUser ? (
+            <>
+              <Button text="Logout" variant="text" onClick={() => Logout()} />
+              <LoggedUserContainer>
+                <strong>{loggedUser.username.charAt(0).toUpperCase()}</strong>
+              </LoggedUserContainer>
+            </>
+          ) : (
+            <>
+              <Button text="Sing in" variant="text" onClick={() => singIn()} />
+              <Button text="Create account" variant="rounded" color="black" />
+            </>
+          )}
         </div>
       </NavBarStyled>
     </>

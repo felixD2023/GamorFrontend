@@ -4,6 +4,7 @@ import usersJoinedReducer from './usersJoinedSlice'
 import platformsReducer from './platformsSlice'
 import categoriesReducer from './categoriesSlice'
 import gamesReducer from './gamesSlice'
+import loggedUserReducer from './loggedUserSlice'
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         platforms:platformsReducer,
         categories:categoriesReducer,
         games:gamesReducer,
+        loggedUser:loggedUserReducer,
     },
 })
 
